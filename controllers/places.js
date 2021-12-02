@@ -1,14 +1,14 @@
-// Requiring Modules
+// DEPENDENCIES
 const express = require('express')
 
-// Setup Route
+// CONFIGURATION
 const router = express.Router()
 
-// Main places page
+// ROUTES
 router.get('/', (req, res) => {
     res.send('GET /places')
 })
 
 
-// Export Route
+// EXPORT
 module.exports = router

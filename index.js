@@ -1,24 +1,18 @@
-// Environment Variables
-require('dotenv').config()
-
-// Require Modules
+// DEPENDENCIES
 const express = require('express')
 
-// Create Express App
+// CONFIGURATION
+require('dotenv').config()
+const PORT = process.env.PORT
 const app = express()
 
-// Constants and Environment Variables
-const PORT = process.env.PORT
-
-// Main Page
+// ROUTES
 app.get('/', (req, res) => {
     res.send('Hello World!')
 })
 
-// Places Route
 app.use('/places', require('./controllers/places'))
 
-// Wildcard Route
 app.get('*', (req, res) => {
     res
         .status(404)
@@ -27,5 +21,5 @@ app.get('*', (req, res) => {
     `)
 })
 
-// Setting localhost Port
+// LISTEN
 app.listen(PORT)
