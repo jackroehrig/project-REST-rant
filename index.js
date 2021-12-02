@@ -15,6 +15,9 @@ app.get('/', (req, res) => {
     res.send('Hello World!')
 })
 
+// Places Route
+app.use('/places', require('./controllers/places'))
+
 // Wildcard Route
 app.get('*', (req, res) => {
     res
