@@ -23,6 +23,9 @@ function index (data) {
         <Def>
             <main>
                 <h1>Places</h1>
+                <a href=".">
+                    <button>Home</button>
+                </a>
                 {placesFormatted}
             </main>
         </Def>
