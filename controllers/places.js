@@ -6,7 +6,7 @@ const router = express.Router()
 
 // ROUTES
 router.get('/', (req, res) => {
-    res.send('GET /places')
+    res.render('places/index')
 })
 
 
