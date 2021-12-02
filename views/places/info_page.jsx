@@ -1,6 +1,10 @@
 // DEPENDENCIES
 const React = require('react')
 
+// CONFIGURE
+require('dotenv').config()
+const PORT = process.env.PORT
+
 // LAYOUT
 const Def = require('../default')
 
@@ -16,6 +20,9 @@ function placeInfo(data){
             <img src={placeObj.pictureLink} alt={`picture of ${placeObj.name}`}/>
             <p>{`Located in ${placeObj.city}, ${placeObj.state}`}</p>
             <p>{`Type of Cuisine: ${placeObj.cuisineType}`}</p>
+            <form action={`/places/${placeObj.id}/edit`} method='GET'>
+                <input type='submit' value='Edit'/>
+            </form>
         </Def>
     )
 }

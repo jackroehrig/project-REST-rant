@@ -8,7 +8,7 @@ function Def (html) {
             <head>
                 <title>Title</title>
             </head>
-            <body>
+            <body style={{textAlign: 'center'}}>
                 {html.children}
             </body>
         </html>

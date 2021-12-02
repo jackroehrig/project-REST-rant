@@ -58,7 +58,16 @@ router.get('/new', (req, res) => {
 
 router.get('/:id', (req, res) => {
     let placeId = req.params.id
-    res.render(`places/info_page`, { placeId, places } )
+    res.render('places/info_page', { placeId, places } )
+})
+
+router.put('/:id', urlencodedParser, (req, res) => {
+    console.log(req.body)
+})
+
+router.get('/:id/edit', (req, res) => {
+    let placeId = req.params.id
+    res.render('places/edit_place', { placeId, places })
 })
 
 // EXPORT
