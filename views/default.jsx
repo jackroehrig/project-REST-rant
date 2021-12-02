@@ -1,5 +1,7 @@
+// DEPENDENCIES
 const React = require('react')
 
+// VIEW
 function Def (html) {
     return (
         <html>
@@ -13,4 +15,5 @@ function Def (html) {
     )
 }
 
+// EXPORT
 module.exports = Def

@@ -1,6 +1,10 @@
+// DEPENDENCIES
 const React = require('react')
+
+// LAYOUT
 const Def = require('./default')
 
+// VIEW
 function home () {
     return (
         <Def>
@@ -11,4 +15,6 @@ function home () {
     )
 }
 
+
+// EXPORT
 module.exports = home

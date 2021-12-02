@@ -1,8 +1,11 @@
 // DEPENDENCIES
 const express = require('express')
+const bodyParser = require('body-parser')
 
 // CONFIGURATION
 const router = express.Router()
+const jsonParser = bodyParser.json()
+const urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 // ROUTES
 router.get('/', (req, res) => {
@@ -34,6 +37,20 @@ router.get('/', (req, res) => {
     res.render('places/index', { places })
 })
 
+router.post('/', urlencodedParser, (req, res) => {
+    createPlacesCard(req.body)
+})
+
+router.get('/new', (req, res) => {
+    res.render('places/new_place')
+})
+
+// FUNCTIONS
+function createPlacesCard(placeObj){
+    for(key in placeObj){
+        console.log(`${key} is ${placeObj[key]}`)
+    }
+}
 
 // EXPORT
 module.exports = router

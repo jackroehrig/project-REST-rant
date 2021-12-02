@@ -1,6 +1,10 @@
+// DEPENDENCIES
 const React = require('react')
+
+// LAYOUT
 const Def = require('../default')
 
+// VIEW
 function index (data) {
     let placesFormatted = data.places.map((place, index) => {
         return (
@@ -21,4 +25,5 @@ function index (data) {
     )
 }
 
+// EXPORT
 module.exports = index

@@ -1,6 +1,10 @@
+// DEPENDENCIES
 const React = require('react')
+
+// LAYOUT
 const Def = require('./default')
 
+// VIEW
 function error404 () {
     return (
         <Def>
@@ -12,4 +16,5 @@ function error404 () {
     )
 }
 
+// EXPORT
 module.exports = error404
