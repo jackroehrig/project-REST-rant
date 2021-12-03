@@ -3,10 +3,15 @@ body {
   color: white;
 }
 
+h1, h2 {
+  text-align: center;
+}
+
 .card {
   width: 25%;
   margin: 2vw;
   border-color: #6002EE;
+  text-align: center;
 }
 .card img {
   height: 50%;
@@ -92,10 +97,11 @@ hr {
 
 .new-form label {
   margin-top: 5vh;
-  text-align: left;
 }
 .new-form [type=submit] {
   margin: 2vw;
+  position: absolute;
+  right: 13vw;
 }
 
 /*# sourceMappingURL=styles.css.map */

@@ -6,11 +6,15 @@ body{
     color: $second-color;
 }
 
+h1, h2 {
+    text-align: center;
+}
 
 .card {
     width: 25%;
     margin: 2vw;
     border-color: $main-color;
+    text-align: center;
 
     img {
         height: 50%;
@@ -121,5 +125,7 @@ hr {
 
     [type = 'submit'] {
         margin: 2vw;
+        position: absolute;
+        right: 13vw;
     }
 }

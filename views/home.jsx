@@ -8,7 +8,7 @@ const Def = require('./default')
 function home () {
     return (
         <Def>
-            <main>
+            <main className="text-center">
                 <h1 className='display-1'>REST-RANT</h1>
                 <div>
                     {/* <img src="/images/cool-pic.jpg" alt="cool picture of nature" /> */}

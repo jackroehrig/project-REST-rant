@@ -16,7 +16,7 @@ function placeInfo(data){
 
     return (
         <Def>
-            <div className="place-info">
+            <div className="place-info text-center">
                 <h2 className="display-3">{placeObj.name}</h2>
                 <p>{`Type of Cuisine: ${placeObj.cuisineType}`}</p>
                 <img src={placeObj.pictureLink} alt={`picture of ${placeObj.name}`}/>
