@@ -1,16 +1,16 @@
-:root {
-  --main-color: #6002EE;
-  --secondary-color: white;
-}
-
 body {
-  background-color: var(--main-color);
-  color: var(--secondary-color);
+  background-color: #6002EE;
+  color: white;
 }
 
 .card {
   width: 25%;
   margin: 2vw;
+  border-color: #6002EE;
+}
+.card img {
+  height: 50%;
+  margin: auto;
 }
 .card h2 {
   font-size: 2vw;
@@ -24,12 +24,78 @@ body {
   color: black;
 }
 
+hr {
+  border: 2px solid white;
+}
+
+.card:hover {
+  animation: mutateCard 0.5s forwards;
+}
+.card:hover .card-body {
+  animation: changeBodyColor 0.5s forwards;
+}
+.card:hover .card-footer {
+  animation: changeFooterColor 0.5s forwards;
+}
+.card:hover p, .card:hover a {
+  animation: makeWhite 0.5s forwards;
+}
+.card:hover img {
+  animation: keepSize 0.5s forwards;
+}
+
+@keyframes mutateCard {
+  from {
+    background-color: #5a5a5a;
+  }
+  to {
+    width: 30%;
+    border-color: #272727;
+    background-color: #5a5a5a;
+  }
+}
+@keyframes changeBodyColor {
+  to {
+    background-color: #5a5a5a;
+  }
+}
+@keyframes changeFooterColor {
+  to {
+    background-color: #272727;
+  }
+}
+@keyframes makeWhite {
+  to {
+    color: white;
+  }
+}
+@keyframes keepSize {
+  to {
+    width: 82%;
+    background-color: #5a5a5a;
+  }
+}
 .card-deck {
   width: 90%;
   margin: auto;
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
+}
+
+.place-info button {
+  margin: 2vw;
+}
+.place-info img {
+  width: 40%;
+}
+
+.new-form label {
+  margin-top: 5vh;
+  text-align: left;
+}
+.new-form [type=submit] {
+  margin: 2vw;
 }
 
 /*# sourceMappingURL=styles.css.map */

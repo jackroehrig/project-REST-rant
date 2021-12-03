@@ -17,21 +17,21 @@ let places = [{
     id: 1
 }, {
     name: 'Hubbard Avenue',
-    pictureLink: '/images/pizza.jpg',
+    pictureLink: '/images/pancakes.jpg',
     city: 'Middleton',
     state: 'WI',
     cuisineType: 'Classic American Diner',
     id: 2
 }, {
     name: 'Rare Steakhouse',
-    pictureLink: '/images/pancakes.jpg',
+    pictureLink: '/images/salmon.jpg',
     city: 'Madison',
     state: 'WI',
     cuisineType: 'Fancy Steakhouse',
     id: 3
 }, {
     name: "Ian's Pizza",
-    pictureLink: '/images/salmon.jpg',
+    pictureLink: '/images/pizza.jpg',
     city: 'Madison',
     state: 'WI',
     cuisineType: 'Pizza Place',
