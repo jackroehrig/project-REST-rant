@@ -10,16 +10,13 @@ const Def = require('../default')
 
 // VIEW
 function placeInfo(data){
-    let placeId = data.placeId
-    let placeObj
-    data.places.forEach(place => place.id == placeId ? placeObj = place : null)
-
+    let placeObj = data.places.find(place => place.id == data.placeId)
     return (
         <Def>
             <div className="place-info text-center">
                 <h2 className="display-3">{placeObj.name}</h2>
-                <p>{`Type of Cuisine: ${placeObj.cuisineType}`}</p>
-                <img src={placeObj.pictureLink} alt={`picture of ${placeObj.name}`}/>
+                <p>{`Type of Cuisine: ${placeObj.cuisines}`}</p>
+                <img src={placeObj.pic} alt={`picture of ${placeObj.name}`}/>
                 <p>{`Located in ${placeObj.city}, ${placeObj.state}`}</p>
                 <a href={`/places/${placeObj.id}/edit`}>
                     <button className="btn btn-danger">Edit</button>

@@ -1,11 +1,13 @@
 // DEPENDENCIES
 const express = require('express')
 const bodyParser = require('body-parser')
+const methodOverride = require('method-override')
 
 // CONFIGURATION
 const router = express.Router()
 const places = require('../models/places.js')
 const urlencodedParser = bodyParser.urlencoded({ extended: false })
+router.use(methodOverride('_method'))
 
 // ROUTES
 router.get('/', (req, res) => {
@@ -32,7 +34,11 @@ router.get('/:id', (req, res) => {
 })
 
 router.put('/:id', urlencodedParser, (req, res) => {
-    console.log(req.body)
+    let id = req.params.id
+    for(key in req.body){
+        places[id - 1][key] != req.body[key] ? places[id - 1][key] = req.body[key] : null
+    }
+    res.redirect(`/places/${id}`)
 })
 
 router.get('/:id/edit', (req, res) => {
