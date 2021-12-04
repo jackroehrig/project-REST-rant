@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
     res.render('places/index', { places })
 })
 
-let nextId = 5;
+let nextId = 4;
 
 router.post('/', urlencodedParser, (req, res) => {
     let newPlace = req.body
@@ -29,21 +29,37 @@ router.get('/new', (req, res) => {
 })
 
 router.get('/:id', (req, res) => {
-    let placeId = req.params.id
-    res.render('places/info_page', { placeId, places } )
+    let id = Number(req.params.id)
+    isNaN(id) 
+        ? res.render('error404') 
+        : !places[id]
+        ? res.render('error404')
+        : res.render('places/info_page', { place: places[id] })
 })
 
 router.put('/:id', urlencodedParser, (req, res) => {
     let id = req.params.id
     for(key in req.body){
-        places[id - 1][key] != req.body[key] ? places[id - 1][key] = req.body[key] : null
+        places[id][key] != req.body[key] ? places[id][key] = req.body[key] : null
     }
     res.redirect(`/places/${id}`)
 })
 
 router.get('/:id/edit', (req, res) => {
-    let placeId = req.params.id
-    res.render('places/edit_place', { placeId, places })
+    let id= req.params.id
+    res.render('places/edit_place', { place: places[id] })
+})
+
+router.delete('/:id', (req, res) => {
+    let id = req.params.id
+    if(isNaN(id)){
+        res.render('error404') 
+    } else if(!places[id]) {
+        res.render('error404')
+    } else {
+        places.splice(id, 1) 
+        res.redirect('/places')
+    }
 })
 
 // EXPORT

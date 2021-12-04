@@ -5,26 +5,26 @@ module.exports = [{
     city: 'Verona',
     state: 'WI',
     cuisines: 'Bar Food/American',
-    id: 1
+    id: 0
 }, {
     name: 'Hubbard Avenue',
     pic: '/images/pancakes.jpg',
     city: 'Middleton',
     state: 'WI',
     cuisines: 'Classic American Diner',
-    id: 2
+    id: 1
 }, {
     name: 'Rare Steakhouse',
     pic: '/images/salmon.jpg',
     city: 'Madison',
     state: 'WI',
     cuisines: 'Fancy Steakhouse',
-    id: 3
+    id: 2
 }, {
     name: "Ian's Pizza",
     pic: '/images/pizza.jpg',
     city: 'Madison',
     state: 'WI',
     cuisines: 'Pizza Place',
-    id: 4
+    id: 3
 }]

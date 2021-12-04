@@ -88,11 +88,28 @@ hr {
   flex-wrap: wrap;
 }
 
-.place-info button {
+.place-profile {
+  display: flex;
+  justify-content: space-between;
+  margin: 2vw;
+  font-size: 2vw;
+}
+.place-profile h3 {
+  font-size: 3vw;
+}
+.place-profile button {
   margin: 2vw;
 }
-.place-info img {
-  width: 40%;
+
+.place-image {
+  width: 50%;
+}
+.place-image img {
+  width: 100%;
+}
+
+.place-info {
+  margin: 0 auto;
 }
 
 .new-form label {
@@ -112,7 +129,7 @@ footer {
   width: 100%;
   position: fixed;
   bottom: 0;
-  height: 4vw;
+  height: 8vh;
   background-color: #424242;
 }
 

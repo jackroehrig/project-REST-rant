@@ -106,15 +106,31 @@ hr {
     flex-wrap: wrap;
 }
 
-.place-info {
+.place-profile {
+    display: flex;
+    justify-content: space-between;
+    margin: 2vw;
+    font-size: 2vw;
+
+    h3 {
+        font-size: 3vw;
+    }
 
     button {
         margin: 2vw;
     }
+}
+
+.place-image {
+    width: 50%;
 
     img {
-        width: 40%;
+        width: 100%;
     }
+}
+
+.place-info {
+    margin: 0 auto;
 }
 
 .new-form {
@@ -139,7 +155,7 @@ footer {
     width: 100%;
     position: fixed;
     bottom: 0;
-    height: 4vw;
+    height: 8vh;
     background-color: rgb(66, 66, 66);
 }
 

@@ -10,20 +10,33 @@ const Def = require('../default')
 
 // VIEW
 function placeInfo(data){
-    let placeObj = data.places.find(place => place.id == data.placeId)
+    let placeObj = data.place
     return (
         <Def>
-            <div className="place-info text-center">
-                <h2 className="display-3">{placeObj.name}</h2>
-                <p>{`Type of Cuisine: ${placeObj.cuisines}`}</p>
-                <img src={placeObj.pic} alt={`picture of ${placeObj.name}`}/>
-                <p>{`Located in ${placeObj.city}, ${placeObj.state}`}</p>
-                <a href={`/places/${placeObj.id}/edit`}>
-                    <button className="btn btn-danger">Edit</button>
-                </a>
-                <a href="/places">
-                    <button className="btn btn-light">Back</button>
-                </a>
+            <div className="place-profile">
+                <div className="place-image">
+                    <img src={placeObj.pic} alt={`picture of ${placeObj.name}`}/>
+                </div>
+                <div className="place-info text-center">
+                    <h2 className="display-2 border-bottom mb-4">{placeObj.name}</h2>
+                    <h3>Rating</h3>
+                    <p>unknown</p>
+                    <h3 className="mt-3">Description</h3>
+                    <p>{`Type of Cuisine: ${placeObj.cuisines}`}</p>
+                    <p>{`Located in ${placeObj.city}, ${placeObj.state}`}</p>
+                    <a href={`/places/${placeObj.id}/edit`}>
+                        <button className="btn btn-warning">Edit</button>
+                    </a>
+                    <form action={`/places/${placeObj.id}?_method=DELETE`} method="POST" style={{display: 'inline'}}>
+                        <button type='submit' className="btn btn-danger">Delete</button>
+                    </form>
+                    <a href="/places">
+                        <button className="btn btn-light">Back</button>
+                    </a>
+                </div>
+            </div>
+            <div className="comments text-center">
+                <h3>Comments</h3>
             </div>
         </Def>
     )
