@@ -85,9 +85,15 @@ function edit(data){
                             </select>
                         </div>
                     </div>
-                    <div className="form-group">
-                        <label htmlFor="cuisines">Cuisines</label>
-                        <input className="form-control" id="cuisines" name="cuisines" type="text" defaultValue={editeePlace.cuisines}/>
+                    <div className="row">
+                        <div className="form-group col-sm-6">
+                            <label htmlFor="cuisines">Cuisines</label>
+                            <input className="form-control" id="cuisines" name="cuisines" type="text" defaultValue={editeePlace.cuisines} />
+                        </div>
+                        <div className="form-group col-sm-6">
+                            <label htmlFor="founded">Founded Year</label>
+                            <input className="form-control" id="founded" name="founded" type="text" defaultValue={editeePlace.founded} />
+                        </div>
                     </div>
                     <input className="btn btn-danger" type="submit" value="CONFIRM EDIT" />
                 </form>

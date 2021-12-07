@@ -38,26 +38,47 @@ router.get('/new', (req, res) => {
 })
 
 router.get('/:id', (req, res) => {
-    let id = Number(req.params.id)
-    // isNaN(id)
-    // to do
+    db.Place.findById(req.params.id)
+    .then(place => {
+        res.render('places/info_page', {place})
+    })
+    .catch(err => {
+        console.log(err)
+        res.render('error404')
+    })
 })
 
 router.put('/:id', urlencodedParser, (req, res) => {
-    let id = req.params.id
-    // to do
-    res.redirect(`/places/${id}`)
+    db.Place.findByIdAndUpdate(req.params.id, req.body, {new: true})
+    .then(updatedPlace => {
+        res.redirect(`/places/${req.params.id}`)
+    })
+    .catch(err => {
+        console.log(err)
+        res.render('error404')
+    })
 })
 
 router.get('/:id/edit', (req, res) => {
-    let id= req.params.id
-    res.render('places/edit_place', /* to do */)
+    db.Place.findById(req.params.id)
+    .then(place => {
+        res.render('places/edit_place', {place})
+    })
+    .catch(err => {
+        console.log(err)
+        res.render('error404')
+    })
 })
 
 router.delete('/:id', (req, res) => {
-    let id = req.params.id
-    // to do
-    // if(isNaN(id)){
+    db.Place.findByIdAndDelete(req.params.id)
+    .then(deletedPlace => {
+        res.redirect('/places')
+    })
+    .catch(err => {
+        console.log(err)
+        res.render('error404')
+    })
 })
 
 // EXPORT
