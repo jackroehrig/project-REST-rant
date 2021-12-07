@@ -28,14 +28,7 @@ function index(data) {
     return (
         <Def>
             <div className="container-fluid">
-                <a href=".." style={{position: 'fixed', left: '1vw', top: '1vw'}}>
-                    <button className="btn btn-light btn-sm">Home</button>
-                </a>
-                <a href="/places/new" style={{position: 'fixed', right: '1vw', top: '1vw'}}>
-                    <button className="btn btn-success">Add Place</button>
-                </a>
                 <h1 className="display-3" style={{margin: '2vw auto'}}>Places to Rant or Rave About</h1>
-                <hr/>
                 <div className="card-deck">
                     {placesFormatted}
                 </div>

@@ -1,9 +1,29 @@
 $main-color: #6002EE;
 $second-color: white;
 
+html, body {
+    height: 100%;
+}
+
 body{
     background-color: $main-color;
     color: $second-color;
+}
+
+nav {
+    ul {
+        margin-right: 2vw;
+    }
+}
+
+main {
+    flex: 1 0 auto
+}
+
+.home-message {
+    margin: auto;
+    position: relative;
+    top: 30vh;
 }
 
 h1, h2 {
@@ -13,12 +33,11 @@ h1, h2 {
 .card {
     width: 25%;
     margin: 2vw;
-    border-color: $main-color;
     text-align: center;
+    border-color: $main-color;
 
     img {
         height: 50%;
-        margin: auto;
     }
 
     h2 {
@@ -36,10 +55,6 @@ h1, h2 {
     }
 }
 
-hr {
-    border: 2px solid white;
-}
-
 .card:hover {
     animation: mutateCard 0.5s forwards;
 
@@ -54,17 +69,11 @@ hr {
     p, a {
         animation: makeWhite 0.5s forwards;
     }
-
-    img {
-        animation: keepSize 0.5s forwards;
-    }
 }
 
 @keyframes mutateCard {
     from{background-color: rgb(90, 90, 90);}
     to{
-        width: 30%;
-        border-color: rgb(39, 39, 39);
         background-color: rgb(90, 90, 90);
     }
 }
@@ -87,14 +96,6 @@ hr {
     from{}
     to{
         color: white
-    }
-}
-
-@keyframes keepSize {
-    from{}
-    to{
-        width: 82%;
-        background-color: rgb(90, 90, 90);
     }
 }
 
@@ -146,17 +147,6 @@ hr {
     }
 }
 
-main {
-    margin-bottom: 4vw;
-}
 
-
-footer {
-    width: 100%;
-    position: fixed;
-    bottom: 0;
-    height: 8vh;
-    background-color: rgb(66, 66, 66);
-}
 
 

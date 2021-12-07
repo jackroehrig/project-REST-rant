@@ -25,10 +25,10 @@ function placeInfo(data){
                     <p>{`Type of Cuisine: ${placeObj.cuisines}`}</p>
                     <p>{`Located in ${placeObj.city}, ${placeObj.state}`}</p>
                     <a href={`/places/${placeObj.id}/edit`}>
-                        <button className="btn btn-warning">Edit</button>
+                        <button className="btn btn-warning"><i className="far fa-edit" /> Edit</button>
                     </a>
                     <form action={`/places/${placeObj.id}?_method=DELETE`} method="POST" style={{display: 'inline'}}>
-                        <button type='submit' className="btn btn-danger">Delete</button>
+                        <button type='submit' className="btn btn-danger"><i className="far fa-trash-alt" /> Delete</button>
                     </form>
                     <a href="/places">
                         <button className="btn btn-light">Back</button>

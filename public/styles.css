@@ -1,6 +1,24 @@
+html, body {
+  height: 100%;
+}
+
 body {
   background-color: #6002EE;
   color: white;
+}
+
+nav ul {
+  margin-right: 2vw;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.home-message {
+  margin: auto;
+  position: relative;
+  top: 30vh;
 }
 
 h1, h2 {
@@ -10,12 +28,11 @@ h1, h2 {
 .card {
   width: 25%;
   margin: 2vw;
-  border-color: #6002EE;
   text-align: center;
+  border-color: #6002EE;
 }
 .card img {
   height: 50%;
-  margin: auto;
 }
 .card h2 {
   font-size: 2vw;
@@ -27,10 +44,6 @@ h1, h2 {
 .card p {
   font-size: 1.5vw;
   color: black;
-}
-
-hr {
-  border: 2px solid white;
 }
 
 .card:hover {
@@ -45,17 +58,12 @@ hr {
 .card:hover p, .card:hover a {
   animation: makeWhite 0.5s forwards;
 }
-.card:hover img {
-  animation: keepSize 0.5s forwards;
-}
 
 @keyframes mutateCard {
   from {
     background-color: #5a5a5a;
   }
   to {
-    width: 30%;
-    border-color: #272727;
     background-color: #5a5a5a;
   }
 }
@@ -72,12 +80,6 @@ hr {
 @keyframes makeWhite {
   to {
     color: white;
-  }
-}
-@keyframes keepSize {
-  to {
-    width: 82%;
-    background-color: #5a5a5a;
   }
 }
 .card-deck {
@@ -119,18 +121,6 @@ hr {
   margin: 2vw;
   position: absolute;
   right: 13vw;
-}
-
-main {
-  margin-bottom: 4vw;
-}
-
-footer {
-  width: 100%;
-  position: fixed;
-  bottom: 0;
-  height: 8vh;
-  background-color: #424242;
 }
 
 /*# sourceMappingURL=styles.css.map */

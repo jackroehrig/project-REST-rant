@@ -2,26 +2,35 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const methodOverride = require('method-override')
+const db = require('../models')
 
 // CONFIGURATION
 const router = express.Router()
-const places = require('../models/places.js')
+// CHANGE EXTENDED?
 const urlencodedParser = bodyParser.urlencoded({ extended: false })
 router.use(methodOverride('_method'))
 
 // ROUTES
 router.get('/', (req, res) => {
-    res.render('places/index', { places })
+    db.Place.find()
+    .then((places) => {
+        res.render('places/index', { places })    
+    })
+    .catch(err => {
+        console.log(err)
+        res.render("error404")
+    })
 })
 
-let nextId = 4;
-
 router.post('/', urlencodedParser, (req, res) => {
-    let newPlace = req.body
-    newPlace.id = nextId
-    nextId++
-    places.push(newPlace)
-    res.redirect('/places')
+    db.Place.create(req.body)
+    .then(() => {
+        res.redirect('/places')
+    })
+    .catch(err => {
+        console.log(err)
+        res.render('error404')
+    })
 })
 
 router.get('/new', (req, res) => {
@@ -30,36 +39,25 @@ router.get('/new', (req, res) => {
 
 router.get('/:id', (req, res) => {
     let id = Number(req.params.id)
-    isNaN(id) 
-        ? res.render('error404') 
-        : !places[id]
-        ? res.render('error404')
-        : res.render('places/info_page', { place: places[id] })
+    // isNaN(id)
+    // to do
 })
 
 router.put('/:id', urlencodedParser, (req, res) => {
     let id = req.params.id
-    for(key in req.body){
-        places[id][key] != req.body[key] ? places[id][key] = req.body[key] : null
-    }
+    // to do
     res.redirect(`/places/${id}`)
 })
 
 router.get('/:id/edit', (req, res) => {
     let id= req.params.id
-    res.render('places/edit_place', { place: places[id] })
+    res.render('places/edit_place', /* to do */)
 })
 
 router.delete('/:id', (req, res) => {
     let id = req.params.id
-    if(isNaN(id)){
-        res.render('error404') 
-    } else if(!places[id]) {
-        res.render('error404')
-    } else {
-        places.splice(id, 1) 
-        res.redirect('/places')
-    }
+    // to do
+    // if(isNaN(id)){
 })
 
 // EXPORT
