@@ -14,6 +14,7 @@ function newPlaceForm(data) {
             </h4>
         )
     }
+
     return (
         <Def>
             <div className="new-form container">
@@ -23,21 +24,21 @@ function newPlaceForm(data) {
                     <div className="row">
                         <div className="form-group col-sm-6">
                             <label htmlFor="name">Place Name</label>
-                            <input className="form-control" id="name" name="name" type="text" required />
+                            <input className="form-control" id="name" name="name" type="text" defaultValue={data.unfinishedForm.name || ''} required />
                         </div>
                         <div className="form-group col-sm-6">
                             <label htmlFor="pic">Place Picture</label>
-                            <input className="form-control" id="pic" name="pic" type="text" />
+                            <input className="form-control" id="pic" name="pic" type="text" defaultValue={data.unfinishedForm.pic || ''} />
                         </div>
                     </div>
                     <div className="row">
                         <div className="form-group col-sm-6">
                             <label htmlFor="city">City</label>
-                            <input className="form-control" id="city" name="city" type="text" />
+                            <input className="form-control" id="city" name="city" type="text" defaultValue={data.unfinishedForm.city || ''} />
                         </div>
                         <div className="form-group col-sm-6">
                             <label htmlFor="state">State</label>
-                            <select className="form-select" id='state' name="state">
+                            <select className="form-select" id='state' name="state" defaultValue={data.unfinishedForm.state || ''}>
                                 <option selected>Select A State</option>
                                 <option value="AL">Alabama</option>
                                 <option value="AK">Alaska</option>
@@ -96,11 +97,11 @@ function newPlaceForm(data) {
                     <div className="row">
                         <div className="form-group col-sm-6">
                             <label htmlFor="cuisines">Cuisines</label>
-                            <input className="form-control" id="cuisines" name="cuisines" type="text" required />
+                            <input className="form-control" id="cuisines" name="cuisines" type="text" defaultValue={data.unfinishedForm.cuisines || ''} required />
                         </div>
                         <div className="form-group col-sm-6">
                             <label htmlFor="founded">Founded Year</label>
-                            <input className="form-control" id="founded" name="founded" type="number" defaultValue={new Date().getFullYear()} required />
+                            <input className="form-control" id="founded" name="founded" type="number" defaultValue={data.unfinishedForm.founded || new Date().getFullYear()} required />
                         </div>
                     </div>
                     <input className="btn btn-success" type="submit" value="Add" />

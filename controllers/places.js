@@ -30,11 +30,15 @@ router.post('/', urlencodedParser, (req, res) => {
     .catch(err => {
         if(err && err.name == 'ValidationError'){
             let message = 'Validation Error: '
+            let unfinishedForm = req.body
+            
             for (var field in err.errors){
                 message += `${field[0].toUpperCase()}${field.slice(1)} was ${err.errors[field].value}. `
                 message += `${err.errors[field].message}`
+                delete unfinishedForm[field]
             }
-            res.render('places/new_place', {message})
+            
+            res.render('places/new_place', {message, unfinishedForm})
         } else {
             res.render('error404')
         }
