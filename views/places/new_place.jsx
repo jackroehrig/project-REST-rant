@@ -91,7 +91,7 @@ function newPlaceForm() {
                         </div>
                         <div className="form-group col-sm-6">
                             <label htmlFor="founded">Founded Year</label>
-                            <input className="form-control" id="founded" name="founded" type="text" required />
+                            <input className="form-control" id="founded" name="founded" type="number" defaultValue={new Date().getFullYear()} required />
                         </div>
                     </div>
                     <input className="btn btn-success" type="submit" value="Add" />

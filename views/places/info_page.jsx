@@ -22,9 +22,8 @@ function placeInfo(data){
                     <h3>Rating</h3>
                     <p>unknown</p>
                     <h3 className="mt-3">Description</h3>
-                    <p>{`Type of Cuisine: ${placeObj.cuisines}`}</p>
-                    <p>{`Located in ${placeObj.city}, ${placeObj.state}`}</p>
-                    <p>{`Founded in ${placeObj.founded}`}</p>
+                    <p>{placeObj.showEstablished()}</p>
+                    <p>{`Serving: ${placeObj.cuisines}`}</p>
                     <a href={`/places/${placeObj.id}/edit`}>
                         <button className="btn btn-warning"><i className="far fa-edit" /> Edit</button>
                     </a>
