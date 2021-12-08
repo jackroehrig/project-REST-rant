@@ -28,8 +28,16 @@ router.post('/', urlencodedParser, (req, res) => {
         res.redirect('/places')
     })
     .catch(err => {
-        console.log(err)
-        res.render('error404')
+        if(err && err.name == 'ValidationError'){
+            let message = 'Validation Error: '
+            for (var field in err.errors){
+                message += `${field[0].toUpperCase()}${field.slice(1)} was ${err.errors[field].value}. `
+                message += `${err.errors[field].message}`
+            }
+            res.render('places/new_place', {message})
+        } else {
+            res.render('error404')
+        }
     })
 })
 

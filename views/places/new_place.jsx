@@ -5,11 +5,20 @@ const React = require('react')
 const Def = require('../default')
 
 // VIEW
-function newPlaceForm() {
+function newPlaceForm(data) {
+    let message = ''
+    if(data.message){
+        message = (
+            <h4 className="alert alert-danger">
+                {data.message}
+            </h4>
+        )
+    }
     return (
         <Def>
             <div className="new-form container">
                 <h2 className="display-3 mt-3">Add Place</h2>
+                {message}
                 <form action="/places" method="POST">
                     <div className="row">
                         <div className="form-group col-sm-6">
