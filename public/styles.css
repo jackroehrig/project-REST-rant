@@ -90,28 +90,46 @@ h1, h2 {
   flex-wrap: wrap;
 }
 
-.place-profile {
-  display: flex;
-  justify-content: space-between;
-  margin: 2vw;
-  font-size: 2vw;
+.place-profile img {
+  border: 4px solid white;
+  border-radius: 10px;
+  height: 100%;
 }
-.place-profile h3 {
+.place-profile h2 {
   font-size: 3vw;
 }
+.place-profile p {
+  font-size: 1.5vw;
+}
 .place-profile button {
-  margin: 2vw;
+  margin: 1vw;
+  border: 2px solid white;
 }
 
-.place-image {
-  width: 50%;
-}
-.place-image img {
-  width: 100%;
+.comments h2 {
+  font-size: 3vw;
 }
 
-.place-info {
-  margin: 0 auto;
+.comment {
+  position: relative;
+  height: 25vh;
+}
+.comment .rant {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+.comment h5 {
+  font-size: 1.5vw;
+}
+.comment .lead {
+  font-size: 1.5vw;
+}
+
+.stars {
+  display: flex;
+  justify-content: space-evenly;
+  color: yellow;
 }
 
 .new-form label {
