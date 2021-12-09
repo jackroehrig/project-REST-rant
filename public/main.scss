@@ -115,23 +115,9 @@ h1, h2 {
         height: 100%
     }
 
-    h2 {
-        font-size: 3vw;
-    }
-
-    p {
-        font-size: 1.5vw;
-    }
-
     button {
         margin: 1vw;
         border: 2px solid white;
-    }
-}
-
-.comments {
-    h2 {
-        font-size: 3vw;
     }
 }
 
@@ -144,13 +130,12 @@ h1, h2 {
         top: 5px;
         right: 5px;
     }
+}
 
-    h5 {
-        font-size: 1.5vw;
-    }
-
-    .lead {
-        font-size: 1.5vw;
+.comment-area {
+    button {
+        margin: 1vw auto;
+        border: 2px solid white;
     }
 }
 

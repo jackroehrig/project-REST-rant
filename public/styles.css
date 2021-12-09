@@ -95,19 +95,9 @@ h1, h2 {
   border-radius: 10px;
   height: 100%;
 }
-.place-profile h2 {
-  font-size: 3vw;
-}
-.place-profile p {
-  font-size: 1.5vw;
-}
 .place-profile button {
   margin: 1vw;
   border: 2px solid white;
-}
-
-.comments h2 {
-  font-size: 3vw;
 }
 
 .comment {
@@ -119,11 +109,10 @@ h1, h2 {
   top: 5px;
   right: 5px;
 }
-.comment h5 {
-  font-size: 1.5vw;
-}
-.comment .lead {
-  font-size: 1.5vw;
+
+.comment-area button {
+  margin: 1vw auto;
+  border: 2px solid white;
 }
 
 .stars {
