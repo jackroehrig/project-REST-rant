@@ -7,7 +7,7 @@ const db = require('../models')
 // CONFIGURATION
 const router = express.Router()
 // CHANGE EXTENDED?
-const urlencodedParser = bodyParser.urlencoded({ extended: false })
+router.use(bodyParser.urlencoded({ extended: false }))
 router.use(methodOverride('_method'))
 
 // ROUTES
@@ -22,7 +22,7 @@ router.get('/', (req, res) => {
     })
 })
 
-router.post('/', urlencodedParser, (req, res) => {
+router.post('/', (req, res) => {
     db.Place.create(req.body)
     .then(() => {
         res.redirect('/places')
@@ -51,6 +51,7 @@ router.get('/new', (req, res) => {
 
 router.get('/:id', (req, res) => {
     db.Place.findById(req.params.id)
+    .populate('comments')
     .then(place => {
         res.render('places/info_page', {place})
     })
@@ -60,7 +61,7 @@ router.get('/:id', (req, res) => {
     })
 })
 
-router.put('/:id', urlencodedParser, (req, res) => {
+router.put('/:id', (req, res) => {
     db.Place.findByIdAndUpdate(req.params.id, req.body, {new: true})
     .then(updatedPlace => {
         res.redirect(`/places/${req.params.id}`)

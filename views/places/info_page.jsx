@@ -11,6 +11,27 @@ const Def = require('../default')
 // VIEW
 function placeInfo(data){
     let placeObj = data.place
+    let comments = (
+        <h3 className="inactive">
+            No comments yet!
+        </h3>
+    )
+
+    if(data.place.comments.length) {
+        comments = data.place.comments.map((c, index) => {
+            return (
+                <div className="border" key={index}>
+                    <h2 className="rant">{c.rant ? 'Rant! >:(' : 'Rave! :)'}</h2>
+                    <h4>{c.content}</h4>
+                    <h3>
+                        <stong>- {c.author}</stong>
+                    </h3>
+                    <h4>Rating: {c.stars}</h4>
+                </div>
+            )
+        })
+    }
+
     return (
         <Def>
             <div className="place-profile">
@@ -35,8 +56,9 @@ function placeInfo(data){
                     </a>
                 </div>
             </div>
-            <div className="comments text-center">
+            <div className="comments text-center border-top">
                 <h3>Comments</h3>
+                {comments}
             </div>
         </Def>
     )
