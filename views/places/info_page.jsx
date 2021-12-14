@@ -18,7 +18,27 @@ function placeInfo(data){
         </h3>
     )
 
+    let rating = (
+        <p className="inactive fs-3">
+            Not yet rated
+        </p>
+    )
+
     if(data.place.comments.length) {
+        let sumRatings = data.place.comments.reduce((tot, c) => tot + c.stars, 0)
+        let averageRating = sumRatings / data.place.comments.length
+        averageRating = Math.round(averageRating * 2)/2
+
+        let pageStars = []
+
+        for(let i = averageRating; i > 0; i--){
+            i == 0.5
+            ? pageStars.push(<i className="fas fa-star-half fa-lg" key={i}/>)
+            : pageStars.push(<i className="fas fa-star fa-lg" key={i}/>)
+        }
+
+        rating = <div className="stars w-25 mt-3 mx-auto">{pageStars}</div>
+
         comments = data.place.comments.map((c, index) => {
 
             let stars = []
@@ -50,6 +70,8 @@ function placeInfo(data){
 
     let rantOrRaveTip = 'Please check this if you are ranting about this restaurant. If you enjoyed the experience leave it unchecked.'
 
+    
+
     return (
         <Def>
             <div className="place-profile container-fluid my-5">
@@ -60,7 +82,7 @@ function placeInfo(data){
                     <div className="place-info text-center col-lg">
                         <h1 className="display-1 border-bottom mb-4">{placeObj.name}</h1>
                         <h2 className="fs-1">Rating</h2>
-                        <p className="fs-3">unknown</p>
+                        {rating}
                         <h2 className="mt-3 fs-1">Description</h2>
                         <p className="fs-3">{placeObj.showEstablished()}</p>
                         <p>{`Serving: ${placeObj.cuisines}`}</p>
@@ -89,7 +111,7 @@ function placeInfo(data){
                                     <input className='form-check-input' id="rant" name="rant" type="checkbox"/>
                                 </div>
                                 <label className="mt-3" htmlFor="stars">Stars Out of 5</label>
-                                <input className='form-control' id="stars" name="stars" type="number" step="0.5"/>
+                                <input className='form-range' id="stars" name="stars" type="range" min='0' max='5' step="0.5" />
                                 <label className="mt-3" htmlFor="content">Comment</label>
                                 <textarea className='form-control' id="content" name="content" rows="3"/>
                                 <div className="text-center">
