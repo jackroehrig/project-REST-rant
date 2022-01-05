@@ -63,6 +63,9 @@ function placeInfo(data){
                             </div>
                         </div>
                     </div>
+                    <form className="comment-delete" action={`/places/${placeObj.id}/comment/${c.id}?_method=DELETE`} method="POST">
+                        <input className="btn btn-danger" type='submit' value="Delete" />
+                    </form>
                 </div>
             )
         })
