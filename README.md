@@ -1,8 +1,24 @@
 # Project REST-Rant
 
-REST-Rant is an app where users can review restaurants.
+REST-Rant is an app where users can create and review restaurants.
 
-### Routes
+## Live Link
+
+[Live REST-Rant](https://limitless-castle-20301.herokuapp.com/)
+
+## Technologies Used
+  
+  ### Front End
+    - React
+    - Sass
+    - HTML
+    
+  ### Back End
+    - MongoDb
+    - Express
+    - Node.JS
+
+## Routes
 
 | Method | Path | Purpose |
 | ------ | ---- | ------- |
@@ -19,7 +35,7 @@ REST-Rant is an app where users can review restaurants.
 | GET | * | 404 page (matches any route not defined above) |
 
 
-### Restaraunt Data
+## Restaraunt Data
 
 - Name
 - Picture
